@@ -1,0 +1,43 @@
+---
+title: "Calibracion de sensores de bajo costo"
+format: pdf
+editor: visual
+author: "Lenna Pedroso"
+date: 2025-11-24
+---
+
+## Marco teórico
+
+La exposición al material particulado fino PM$2,5$ constituye un grave riesgo para la salud, ya que estas partículas pueden penetrar profundamente en el sistema respiratorio y acumularse en el organismo, incrementando la probabilidad de enfermedades respiratorias, cáncer de pulmón y mortalidad prematura. En la Región Metropolitana de Santiago, las concentraciones de PM2,5 superan con frecuencia los límites permitidos, situación que se ve agravada por su ubicación geográfica y condiciones meteorológicas que restringen la dispersión de contaminantes, especialmente durante el invierno.
+
+El monitoreo de la calidad del aire en la ciudad se realiza principalmente a través del sistema SINCA, el cual dispone de un número limitado de estaciones de alta precisión, lo que reduce la cobertura espacio-temporal y dificulta una representación precisa de la exposición real de la población. Asimismo, estas estaciones presentan elevados costos de instalación, mantenimiento y operación, limitando su expansión y accesibilidad, particularmente en contextos con recursos restringidos.
+
+Los sensores de bajo costo surgen como una alternativa complementaria al permitir una mayor cobertura espacial y una mejor caracterización de la variabilidad local del PM$2,5$. No obstante, su desempeño se ve influenciado por factores ambientales y tienden a sobreestimar las concentraciones, por lo que requieren procesos de calibración rigurosos. En este marco, el objetivo de la investigación es calibrar sensores Plantower en la comuna de Las Condes, buscando reducir el error de medición a valores inferiores a 20 μg/m³. \# Time variation Para verificar el comportamiento de los sensores y compararlos con los monitores de referencia, se realiza un gráfico de time variation.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+# Cargar libreria
+library(readr)
+library(openair)
+# Cargar datos
+CON_P_Sinca <- read_delim(
+  "C:/Semestre 2-2025/Visualizacion/Página web/Pagina web/Archivo quarto/Datos/CON_P_Sinca.csv",
+  delim = ";",
+  locale = locale(decimal_mark = ",")
+)
+
+# Datos de los sensores Plantawer vs Sinca (modificacion de la fecha)
+CON_P_Sinca$Fecha<-CON_P_Sinca$Fecha+20000000
+CON_P_Sinca$Hora<-CON_P_Sinca$Hora/100
+CON_P_Sinca$Hora<- paste(CON_P_Sinca$Hora,"00", sep=":", collapse=NULL)
+CON_P_Sinca$date<-  paste(CON_P_Sinca$Fecha,CON_P_Sinca$Hora , sep=" ", collapse=NULL)
+CON_P_Sinca$date<- as.POSIXct(CON_P_Sinca$date, format = "%Y%m%d %H:%M", tz = "Etc/GMT+4")
+# Grafico time variation 
+timeVariation(mydata = CON_P_Sinca, 
+              pollutant = c("PM25_P1", "PM25_P2", "PM25_P3", "PM25_P4", "PM25_P5", "PM25_Sinca"), 
+              main = "Time variation Plantawer vs Sinca en Las Condes",
+              ylab = expression(PM[2.5]~" (" * mu * "g/" * m^3 * ")") 
+              )
+```
