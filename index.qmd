@@ -28,7 +28,10 @@ El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta con 
 
 ## Sensores de bajo costo
 
-Los sensores de bajo costo para medir la concentración de material particulado han tenido una gran aceptación en los últimos años debido a su bajo costo, accesibilidad y reducido consumo energético. Los sensores que se utilizarán en este estudio corresponden al modelo Plantower; para más información, puede visitarse el sitio oficial del fabricante. <https://aqicn.org/sensor/pms1003/ru/>. ![Imagen desde Base64](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkG....TU0=)
+Los sensores de bajo costo para medir la concentración de material particulado han tenido una gran aceptación en los últimos años debido a su bajo costo, accesibilidad y reducido consumo energético. Los sensores que se utilizarán en este estudio corresponden al modelo Plantower; para más información, puede visitarse el sitio oficial del fabricante <https://www.uradmonitor.com/compact-pm-sensors-plantower-pmsa003/>.
+
+![Sensor Plantower](https://www.uradmonitor.com/wp-content/uploads/2020/11/pmsa003_sensors_uradmonitor.jpg){width="70%"}
+
 
 ### Gráfico de tendencia temporal
 
@@ -39,8 +42,9 @@ Para verificar el comportamiento de los sensores y compararlos con los monitores
 library(dplyr)   
 library(tidyr)    
 library(rlang) 
-
-
+library(ggplot2)
+library(gganimate)
+library(dplyr)
 #Cargar datos  -----------------------------------------------------
 Condes_Plantower_SINCA_long3 <- read.csv2(
   "C:/Semestre 2-2025/Visualizacion/Página web/Pagina web/Datos/Condes_Plantower_SINCA_long3.csv",
@@ -81,17 +85,6 @@ hour_wday <- hour_wday %>%
       )
     )
   )
-```
-
-```{r}
-#| echo: true
-#| message: false
-#| warning: false
-# Carga solo lo que necesitas para probar
-library(ggplot2)
-library(gganimate)
-library(dplyr)
-        
 # Grafico de variacion
 variacion <- ggplot(
   hour_wday,
@@ -138,8 +131,8 @@ variacion <- ggplot(
     axis.text.x = element_text(angle = 0, hjust = 0.5)
   ) +
   transition_reveal(along = hour)
-
 ```
+
 
 ```{r}
 knitr::include_graphics("variacion.gif")
