@@ -32,7 +32,6 @@ Los sensores de bajo costo para medir la concentración de material particulado 
 
 ![Sensor Plantower](https://www.uradmonitor.com/wp-content/uploads/2020/11/pmsa003_sensors_uradmonitor.jpg){width="70%"}
 
-
 ### Gráfico de tendencia temporal
 
 Para verificar el comportamiento de los sensores y compararlos con los monitores de referencia (SINCA), se realiza un gráfico de tendencia temporal.
@@ -132,7 +131,6 @@ variacion <- ggplot(
   ) +
   transition_reveal(along = hour)
 ```
-
 
 ```{r}
 knitr::include_graphics("variacion.gif")
