@@ -24,7 +24,7 @@ execute:
 
 ## SINCA
 
-El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta con aproximadamente 12 estaciones de monitoreo en la ciudad, lo que limita la determinación espacial de los contaminantes y, por ende, la estimación de la exposición real de la población. <https://sinca.mma.gob.cl/>.
+El **Sistema de Información Nacional de Calidad del Aire (SINCA)** presenta aproximadamente 10 estaciones de monitoreo en la ciudad de Santiago de Chile , lo que limita la determinación espacial de los contaminantes y, por ende, la exposición real de la población. <https://sinca.mma.gob.cl/>.
 
 ## Sensores de bajo costo
 
