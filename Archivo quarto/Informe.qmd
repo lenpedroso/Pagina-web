@@ -3,33 +3,38 @@ title: "Calibracion de sensores de bajo costo"
 format: pdf
 editor: visual
 author: "Lenna Pedroso"
-date: 2025-11-24
+date: 2025-11-27
 fig-width: 16
 fig-height: 10
 dpi: 300
+toc: true
+toc-title: "Índice"
+bibliography: Biblio.bib
+csl: "https://www.zotero.org/styles/apa"
+citation-style: apa
 ---
 
 ## 1. Marco teórico
 
-PONERLE EL NOMBRE A CADA FIGURA La exposición a material particulado fino, con un diámetro aerodinámico menor o igual a 2,5 μm (PM$2,5$), pude provocar millones de muertes anuales, ya que estas partículas al ser inhaladas, pueden penetrar a través del sistema respiratorio y acumularse en diferentes partes del cuerpo (Li et al., 2020). Entre los riesgos asociados a su exposición se destacan: aumento en la probabilidad de desarrollar cáncer de pulmón, mortalidad prematura y enfermedades respiratorias (Borchers-Arriagada et al., 2024).
+La exposición a material particulado fino, con un diámetro aerodinámico menor o igual a 2,5 $\mu$g (PM$_{2,5}$), pude provocar millones de muertes anuales, ya que estas partículas al ser inhaladas, pueden penetrar a través del sistema respiratorio y acumularse en diferentes partes del cuerpo [@li2020integrating] . Entre los riesgos asociados a su exposición se destacan: aumento en la probabilidad de desarrollar cáncer de pulmón, mortalidad prematura y enfermedades respiratorias [@borchers2024mortality].
 
-La Región Metropolitana de Santiago de Chile se encuentra entre las ciudades más contaminadas de Sudamérica, superando el límite máximo permisible referido a la concentración anual de PM$2,5$ establecido para Chile (20 μg/m3) (Peralta et al., 2022). Esta situación se debe principalmente a su ubicación geográfica, cuyas características topográficas y condiciones meteorológicas restringen la dispersión de contaminantes favoreciendo su acumulación principalmente durante el invierno (Menares et al., 2021).
+La Región Metropolitana de Santiago de Chile se encuentra entre las ciudades más contaminadas de Sudamérica, superando el límite máximo permisible referido a la concentración anual de (PM$_{2,5}$) establecido para Chile (20 ($\mu$g/m$^3$)) [@peralta2022space]. Esta situación se debe principalmente a su ubicación geográfica, cuyas características topográficas y condiciones meteorológicas restringen la dispersión de contaminantes favoreciendo su acumulación principalmente durante el invierno [@menares2021forecasting].
 
-El control de la calidad del aire atmosférico desempeña un papel crucial en la prevención de la contaminación ambiental en la región. El Sistema de Información Nacional de Calidad del Aire (SINCA), en Santiago de Chile, presenta sensores remotos que estima las concentraciones de PM$2,5$. Estos sensores están distribuidos en un número limitado de sitios, (10 estaciones de monitoreo aproximadamente), por lo que ofrecen una resolución espacio-temporal limitada al aportar datos restringidos al área donde se encuentran estas estaciones.
+El control de la calidad del aire atmosférico desempeña un papel crucial en la prevención de la contaminación ambiental en la región. El Sistema de Información Nacional de Calidad del Aire (SINCA), en Santiago de Chile, presenta sensores remotos que estima las concentraciones de PM$_{2,5}$. Estos sensores están distribuidos en un número limitado de sitios, (10 estaciones de monitoreo aproximadamente), por lo que ofrecen una resolución espacio-temporal limitada al aportar datos restringidos al área donde se encuentran estas estaciones.
 
-Otra de las limitaciones es su elevado costo y su incompatibilidad, en países en vías de desarrollo, debido a su tamaño y gastos de mantenimiento. Además, requieren la incorporación de personal capacitado y calificado para su operación (Tarazona Alvarado et al., 2024). Por otra parte, los modelos convencionales de distribución de estos sensores de monitoreo están sujetos a grandes incertidumbres debido a la falta de perfiles de emisión precisos de todas las fuentes contribuyentes y al número limitado de mediciones en los sitios receptores. Como consecuencia, gran parte de la población permanece expuesta a fuentes locales no capturada por el SINCA, subestimándose la exposición real y, por ende, sus implicaciones en la salud humana.
+Otra de las limitaciones es su elevado costo y su incompatibilidad, en países en vías de desarrollo, debido a su tamaño y gastos de mantenimiento. Además, requieren la incorporación de personal capacitado y calificado para su operación . Por otra parte, los modelos convencionales de distribución de estos sensores de monitoreo están sujetos a grandes incertidumbres debido a la falta de perfiles de emisión precisos de todas las fuentes contribuyentes y al número limitado de mediciones en los sitios receptores [@tarazona2024assessing]. Como consecuencia, gran parte de la población permanece expuesta a fuentes locales no capturada por el SINCA, subestimándose la exposición real y, por ende, sus implicaciones en la salud humana.
 
-La tecnología de detección de bajo costo es una alternativa viable de monitoreo de la calidad del aire debido a que proporcionan información sobre la variación temporal y espacial de la contaminación por PM$2,5$. Además, brindan información detallada sobre el grado de exposición de la población en la ciudad. Estos sensores se pueden utilizar para caracterizar variaciones de concentración de PM$2,5$ e identificar puntos críticos de contaminación a escala local, incluso en condiciones extremas de contaminación del aire. Por otra parte, proporcionan información sobre la dinámica de los patrones de contaminación y permiten analizar el impacto de las fuentes locales, contribuyendo a la conceptualización de una gestión ambiental más encaminada a reducir la exposición humana a estos contaminantes.
+La tecnología de detección de bajo costo es una alternativa viable de monitoreo de la calidad del aire debido a que proporcionan información sobre la variación temporal y espacial de la contaminación por PM$_{2,5}$. Además, brindan información detallada sobre el grado de exposición de la población en la ciudad. Estos sensores se pueden utilizar para caracterizar variaciones de concentración de PM$_{2,5}$ e identificar puntos críticos de contaminación a escala local, incluso en condiciones extremas de contaminación del aire. Por otra parte, proporcionan información sobre la dinámica de los patrones de contaminación y permiten analizar el impacto de las fuentes locales, contribuyendo a la conceptualización de una gestión ambiental más encaminada a reducir la exposición humana a estos contaminantes [@traviss2025four; @tagle2020field; @kar2024high] .
 
-Una de las principales limitaciones de estos sensores es su baja presión en la determinación de la concentración del PM$2,5$ ya que son muy sensibles a variaciones de temperatura y humedad. Además, tiendes a sobreestimar los valores de concentración por lo que la calibración de estos prototipos constituye un paso esencial para garantizar un monitoreo complementario preciso en la ciudad.
+Una de las principales limitaciones de estos sensores es su baja presión en la determinación de la concentración del PM$_{2,5}$ ya que son muy sensibles a variaciones de temperatura y humedad. Además, tiendes a sobreestimar los valores de concentración por lo que la calibración de estos prototipos constituye un paso esencial para garantizar un monitoreo complementario preciso en la ciudad.
 
-## Objetivo general
+### Objetivo general
 
-El objetivo de esta investigación es realizar la calibración de sensores de bajo costo (Plantower) en la comuna Las Condes obteniendo un error de medición por debajo de 20 μg/m3.
+El objetivo de esta investigación es realizar la calibración de sensores de bajo costo (Plantower) en la comuna Las Condes obteniendo un error de medición por debajo de 20 $\mu\text{g/m}^3$.
 
 ## 2. Metodología
 
-Se realizó un monitoreo durante el periodo del 4 de junio al 23 de agosto de 2025. Los sensores de bajo costo se colocaron en la estación de referencia (SINCA) ubicada en la comuna Las Condes perteneciente a la ciudad de Santiago de Chile. Se colocaron 5 sensores de bajo costo para evaluar su capacidad de ,edir con presición las concentraciones de PM$2,5$.
+Se realizó un monitoreo durante el periodo del 4 de junio al 23 de agosto de 2025. Los sensores de bajo costo se colocaron en la estación de referencia (SINCA) ubicada en la comuna Las Condes perteneciente a la ciudad de Santiago de Chile. Se colocaron 5 sensores de bajo costo para evaluar su capacidad de ,edir con presición las concentraciones de PM$_{2,5}$.
 
 ### 2.1. Tendencia temporal
 
@@ -39,6 +44,7 @@ Primeramente, se analizará la tendencia temporal de las concentraciones de cinc
 #| echo: true
 #| message: false
 #| warning: false
+#| fig-cap: "Variación horaria de PM₂.₅ por día de la semana y sensor"
 # Cargar librerias -----------------------------------------------------
 library(dplyr)   
 library(tidyr)    
@@ -52,9 +58,9 @@ Condes_Plantower_SINCA_long3 <- read.csv2(
 # Funcion para calcular las concentraciones semanales
 Condes_summary_pm25 <- function(datos, tiempo, pm_col = "value") {
   datos %>%
-    group_by(across(all_of(tiempo)), sensor) %>% # La funcion fue realizada para cada sensor
+    group_by(across(all_of(tiempo)), sensor) %>% 
     summarise(
-      n    = sum(!is.na(.data[[pm_col]])), # Para determinar los datos válidos
+      n    = sum(!is.na(.data[[pm_col]])), 
       mean = mean(.data[[pm_col]], na.rm = TRUE),
       sd   = sd(.data[[pm_col]],  na.rm = TRUE),
       se   = ifelse(n > 1, sd / sqrt(n), NA_real_),
@@ -91,9 +97,10 @@ hour_wday <- hour_wday %>%
 #| echo: true
 #| message: false
 #| warning: false
-# Cargar librerias --------------------------------------------------------
-library (ggplot2)
-# Grafico de variacion de PM25 por horas y dias de la semana
+#| fig-cap: "Variación horaria de  PM$2,5$por día de la semana y sensor"
+
+
+library(ggplot2)
 
 ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group = sensor)) +
   geom_ribbon(aes(ymin = ymin, ymax = ymax), alpha = 0.15, colour = NA) +
@@ -134,20 +141,19 @@ ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group =
     strip.text = element_text(face = "bold"),
     axis.text.x = element_text(angle = 0, hjust = 0.5)
   )
-
-
 ```
 
 Al analizar el gráfico se observa que existe una marcada diferencia en el comportamiento de los sensores de bajo costo en comparación con los valores de la estación de referencia (SINCA). En este caso los sensores de bajo costo tienden a sobreestimar las concentraciones de material particulado demostrándose la importancia de su calibración para solucionar estas limitaciones.
 
 ### 2.2. Regresión lineal
 
-Para obtener la ecuación de calibración para cada sensor de bajo costo se aplicó un modelo de regresión lineal mediante #scaterplot#. Este grafico es especifico para analizar regresiones linineales correspondientes a contaminates atmosfericos ya que permite observar la frecuncia de episodios de alta concentracion en la ciudad. Los resultados se muestran en la siguiente figura.
+Para obtener la ecuación de calibración para cada sensor de bajo costo se aplicó un modelo de regresión lineal mediante *scaterplot*. Este grafico es especifico para analizar regresiones linineales correspondientes a contaminates atmosfericos ya que permite observar la frecuncia de episodios de alta concentracion en la ciudad. Los resultados se muestran en la siguiente figura.
 
 ```{r}
 #| echo: true
 #| message: false
 #| warning: false
+#| fig-cap: "Análisis de regresión lineal SINCA vs Sensor de bajo costo(value)"
 
 # Cargar librerias -----------------------------------------------------
 library(openair)
@@ -167,10 +173,9 @@ scatterPlot(
   ci     = TRUE,
   fit    = TRUE,
   type   = "sensor",
-  main   = "Plantower vs SINCA por sensor",
   xlab   = "PM2.5 Sensor Plantower (µg/m³)",
   ylab   = "PM2.5 SINCA (µg/m³)",
-  fontsize = 14
+  fontsize = 16
 )
 
 ```
@@ -179,7 +184,7 @@ En la figura se demuestra que a pesar de existir un defase en el comportamiento 
 
 ### 2.3 Analisis de los errores del modelo
 
-Uno de los aspectos a considerar para el uso de los sensores de bajo costo como complemento de los monitores regulatorios (SINCA) es el análisis de error. En este contexto, se determino que los errores absoluto, asi como las metricas especificas de error (MB, MGE) deberían estar por debajo de 20 μg/m3.Los resultados se muestran en la siguiente figura.
+Uno de los aspectos a considerar para el uso de los sensores de bajo costo como complemento de los monitores regulatorios (SINCA) es el análisis de error. En este contexto, se determino que los errores absoluto, asi como las metricas especificas de error (MB, MGE) deberían estar por debajo de 20 $\mu\text{g/m}^3$.Los resultados se muestran en la siguiente figura.
 
 ```{r}
 
@@ -201,23 +206,23 @@ errores_no_calibrado <- errores_completo %>% filter(Clasificacion == "No calibra
 
 violin_nocalibrado <- ggplot(errores_no_calibrado ,
                       aes(x = sensor, y = error_abs, fill = sensor)) +
-  geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) + # No recorta extremo y especifica la transparencia
-  geom_boxplot(width = 0.10, alpha = 0.8, linewidth = 1.0, #Añadir box plot dentro del violin
-               outlier.size = 1.5) +   # Especifica el tamaño de los puntos outlier
-  geom_hline(yintercept = 20, linetype = "dashed",  # Añade una linea horizontal en y=20
-             color = "firebrick4", linewidth = 1) + # Selecciona el color de la linea
-  scale_y_continuous(limits = c(0, NA)) +       # Establece que el valor minimo es 0 y sin max(Na)
-  scale_fill_manual(values = c(                 # Seleccion de colores para cada grafico de violin
+  geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) +  
+  geom_boxplot(width = 0.10, alpha = 0.8, linewidth = 1.0,  
+               outlier.size = 1.5) +   
+  geom_hline(yintercept = 20, linetype = "dashed",  
+             color = "firebrick4", linewidth = 1) + 
+  scale_y_continuous(limits = c(0, NA)) +      
+  scale_fill_manual(values = c(                 
     "PM25_P1" = "firebrick1",
     "PM25_P2" = "firebrick2",
     "PM25_P3" = "firebrick3",
     "PM25_P4" = "firebrick4",
     "PM25_P5" = "#5A0F0F"
   )) +
-  theme_bw(base_size = 16) +                 # Tema blanco y negro con tamño de texto 16
+  theme_bw(base_size = 16) +                 
   theme(
-    plot.title = element_text(face = "bold", hjust = 0.5), #Título en negrita y centrado
-    axis.text.x = element_text(angle = 45, hjust = 1) # Inclina el eje para evitar solapamientos
+    plot.title = element_text(face = "bold", hjust = 0.5), 
+    axis.text.x = element_text(angle = 45, hjust = 1) 
   ) +
   labs(title = "Error absoluto — No calibrados",
        x = "sensor", y = "Error absoluto (µg/m³)",
@@ -231,13 +236,13 @@ errores_cal <- errores_completo %>% filter(Clasificacion == "Calibrados")
 
 violin_calibrado <- ggplot(errores_cal,
                                aes(x = sensor, y = error_abs, fill = sensor)) +
-  geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) + # No recorta extremo y especifica la transparencia
-  geom_boxplot(width = 0.10, alpha = 0.8, linewidth = 1.0, #Añadir box plot dentro del violin
-               outlier.size = 1.5) +   # Especifica el tamaño de los puntos outlier
-  geom_hline(yintercept = 20, linetype = "dashed",  # Añade una linea horizontal en y=20
-             color = "firebrick4", linewidth = 1) + # Selecciona el color de la linea
-  scale_y_continuous(limits = c(0, NA)) +       # Establece que el valor minimo es 0 y sin max(Na)
-  scale_fill_manual(values = c(                 # Seleccion de colores para cada grafico de violin
+  geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) +  
+  geom_boxplot(width = 0.10, alpha = 0.8, linewidth = 1.0,  
+               outlier.size = 1.5) +   
+  geom_hline(yintercept = 20, linetype = "dashed",  
+             color = "firebrick4", linewidth = 1) + 
+  scale_y_continuous(limits = c(0, NA)) +       
+  scale_fill_manual(values = c(                  
     "PM25_P1" = "firebrick1",
     "PM25_P2" = "firebrick2",
     "PM25_P3" = "firebrick3",
@@ -267,22 +272,22 @@ Errores_antes_despues<- read.csv2( "C:/Semestre 2-2025/Visualizacion/Página web
 
 barras_MGE <- ggplot(Errores_antes_despues, 
                 aes(x = Sensor, y = MGE, fill = Clasificación)) +
-  geom_bar(stat = "identity", color = "black", # añade un borde negro a cada grafica
+  geom_bar(stat = "identity", color = "black", 
            position = position_dodge(width = 0.9)) +
-  geom_errorbar(aes(ymin = MGE - SD_MGE, ymax = MGE + SD_MGE),# añade la sd
+  geom_errorbar(aes(ymin = MGE - SD_MGE, ymax = MGE + SD_MGE),
                 width = 0.2, linewidth = 0.8,
                 position = position_dodge(width = 0.9)) + 
-  geom_hline(yintercept = 20, # Linea en 20 discontinua 
+  geom_hline(yintercept = 20, 
              linetype = "dashed",
              color = "firebrick4",
-             linewidth = 1) +   #grosor
-   scale_fill_manual(values = c(    # Para especificar los colores aemplear
+             linewidth = 1) +   
+   scale_fill_manual(values = c(    
     "No calibrados" = "#1E90FF",
     "Calibrados"    = "firebrick1"
   )) +
   theme_bw(base_size = 16) +
   theme(
-    plot.title = element_text(face = "bold", hjust = 0.5),# Título en negrita y centrado.
+    plot.title = element_text(face = "bold", hjust = 0.5),
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.title = element_blank()
   ) +
@@ -293,12 +298,12 @@ barras_MGE <- ggplot(Errores_antes_despues,
 
 barras_MB <- ggplot(Errores_antes_despues, 
                aes(x = Sensor, y = MB, fill = Clasificación)) +
-  geom_bar(stat = "identity", color = "black", # añade un borde negro a cada grafica
+  geom_bar(stat = "identity", color = "black",
            position = position_dodge(width = 0.9)) +
-  geom_errorbar(aes(ymin = MB - SD_MB, ymax = MB + SD_MB),# añade los valores de desviación del error
+  geom_errorbar(aes(ymin = MB - SD_MB, ymax = MB + SD_MB), 
                 width = 0.2, linewidth = 0.8,
                 position = position_dodge(width = 0.9)) +
-  geom_hline(yintercept = 20,  # Linea en 20 discontinua 
+  geom_hline(yintercept = 20,
              linetype = "dashed",
              color = "firebrick4",      
              linewidth = 1) +
@@ -306,14 +311,15 @@ barras_MB <- ggplot(Errores_antes_despues,
     "No calibrados" = "#1E90FF",
     "Calibrados"    = "firebrick1"
   )) +
-  theme_bw(base_size = 16) +    # Tema blanco y negro con tamño de texto 16
+  theme_bw(base_size = 16) +    
   theme(
-    plot.title = element_text(face = "bold", hjust = 0.5),# Título en negrita y centrado.
+    plot.title = element_text(face = "bold", hjust = 0.5),
     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.title = element_blank()
   ) +
   labs(title = "MB antes / después de calibrar",
        x = "Sensor", y = "MB (µg/m³)")
+
 
 
 
@@ -323,19 +329,22 @@ barras_MB <- ggplot(Errores_antes_despues,
 #| echo: true
 #| message: false
 #| warning: false
+#| fig-cap: "Análisis de errores antes y después de la calibración"
+#| fig-width: 10
+#| fig-height: 6
 # Cargar librerias --------------------------------------------------------
 library(patchwork)
 
 # Especificar una leyenda para los violines ----------------------------------------
 
-figura_violines <- (violin_nocalibrado | violin_calibrado) +  # Especifica el orden en la cuadricula 
+figura_violines <- (violin_nocalibrado | violin_calibrado) +  
   plot_layout(guides = "collect") & # Una leyenda       
   theme(legend.position = "right")   # leyendas  a la derecha
 
 # Especificar una leyenda para los graficos de barras -------------------------------------------------------
 figura_barras <- (barras_MGE | barras_MB) +
-  plot_layout(guides = "collect") &        # Una sola leyenda para las barras
-  theme(legend.position = "right")      # leyendas  a la derecha
+  plot_layout(guides = "collect") &       
+  theme(legend.position = "right")      
 
 
 # Unir figuras y especificar orden --------------------------------------------------------
@@ -349,9 +358,11 @@ figura_final
 
 ```
 
-La figura se evidencia que al aplicarle un modelo de regresión lineal a los sendores de bajo costo todos los valores de errores medios estuvieron por debajo de 20 µg/m³.
+La figura se evidencia que al aplicarle un modelo de regresión lineal a los sendores de bajo costo todos los valores de errores medios estuvieron por debajo de 20 $\mu\text{g/m}^3$.
 
-# Conclusiones
+## 3. Conclusiones
 
-1.  Los sensores de bajo costo tienden a sobrestimar la concentracion de PM$2,5$.
-2.  Un modelo de regresión linieal puede representar el comportamiento de las concentraciones de PM2,5 con un ajuste de (R2=0,87-0,9), permitiendo obtener valores de error de stimacion del modelo por debajo de 20 μg/m3.
+1.  Los sensores de bajo costo tienden a sobrestimar la concentracion de PM$_{2,5}$.
+2.  Un modelo de regresión linieal puede representar el comportamiento de las concentraciones de PM2,5 con un ajuste de (R2=0,87-0,9), permitiendo obtener valores de error de stimacion del modelo por debajo de 20 $\mu\text{g/m}^3$.
+
+## 4. Referencias bibliógraficas
