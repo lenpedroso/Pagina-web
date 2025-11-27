@@ -1,5 +1,5 @@
 ---
-title: "Calibración de sensores de bajo costo (PM$2,5$)"
+title: "Calibración de sensores de bajo costo (PM<sub>2.5</sub>)"
 author: "Lenna Pedroso Noris"
 lang: es
 output-dir: data
@@ -28,7 +28,7 @@ El **Sistema de Información Nacional de Calidad del Aire(SINCA)** presenta con 
 
 ## Sensores de bajo costo
 
-Los sensores de bajo costo para medir la concentración de material particulado han tenido una gran aceptación en los últimos años debido a su bajo costo, accesibilidad y reducido consumo energético. Los sensores que se utilizarán en este estudio corresponden al modelo Plantower; para más información, puede visitarse el sitio oficial del fabricante. <https://aqicn.org/sensor/pms1003/ru/>.
+Los sensores de bajo costo para medir la concentración de material particulado han tenido una gran aceptación en los últimos años debido a su bajo costo, accesibilidad y reducido consumo energético. Los sensores que se utilizarán en este estudio corresponden al modelo Plantower; para más información, puede visitarse el sitio oficial del fabricante. <https://aqicn.org/sensor/pms1003/ru/>. ![Imagen desde Base64](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkG....TU0=)
 
 ### Gráfico de tendencia temporal
 
@@ -38,7 +38,9 @@ Para verificar el comportamiento de los sensores y compararlos con los monitores
 # Cargar librerias -----------------------------------------------------
 library(dplyr)   
 library(tidyr)    
-library(rlang)  
+library(rlang) 
+
+
 #Cargar datos  -----------------------------------------------------
 Condes_Plantower_SINCA_long3 <- read.csv2(
   "C:/Semestre 2-2025/Visualizacion/Página web/Pagina web/Datos/Condes_Plantower_SINCA_long3.csv",
@@ -63,27 +65,49 @@ Condes_summary_pm25 <- function(datos, tiempo, pm_col = "value") {
 hour_wday <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, c("wday", "hour"),"value_PM25")
 hour <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, "hour", "value_PM25")
 wday <- Condes_summary_pm25(Condes_Plantower_SINCA_long3, "wday", "value_PM25")
-
+# Especificar orden
+hour_wday <- hour_wday %>% 
+  mutate(
+    wday = factor(
+      wday,
+      levels = c(
+        "lun\\,",
+        "mar\\,",
+        "mié\\,",
+        "jue\\,",
+        "vie\\,",
+        "sáb\\,",
+        "dom\\,"
+      )
+    )
+  )
 ```
 
 ```{r}
 #| echo: true
 #| message: false
 #| warning: false
-# Cargar librerias --------------------------------------------------------
-library (ggplot2)
-# Grafico de variacion de PM25 por horas y dias de la semana
-
-ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group = sensor)) +
+# Carga solo lo que necesitas para probar
+library(ggplot2)
+library(gganimate)
+library(dplyr)
+        
+# Grafico de variacion
+variacion <- ggplot(
+  hour_wday,
+  aes(x = hour, y = mean, color = sensor, fill = sensor, group = sensor)
+) +
   geom_ribbon(aes(ymin = ymin, ymax = ymax), alpha = 0.15, colour = NA) +
   geom_line(linewidth = 1.4) +
+  geom_point(size = 1.3, show.legend = FALSE) +
   facet_wrap(vars(wday), nrow = 1) +
   labs(
     x = "Hora del día",
     y = expression(PM[2.5]~(mu*g/m^3)),
     color = "Sensor",
     fill  = "Sensor",
-    title = "Promedio horario de PM2.5 por día de la semana y sensor"
+    title = "Promedio horario de PM2.5 por día de la semana y sensor",
+    subtitle = "Hora: {frame_along}"
   ) +
   scale_color_manual(
     values = c(
@@ -108,19 +132,24 @@ ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group =
   theme_bw() +
   theme(
     legend.position = "right",
-    plot.title = element_text(hjust = 0.5, face = "bold"),  
+    plot.title = element_text(hjust = 0.5, face = "bold"),
     strip.background = element_rect(fill = "grey90", color = NA),
     strip.text = element_text(face = "bold"),
     axis.text.x = element_text(angle = 0, hjust = 0.5)
-  )
+  ) +
+  transition_reveal(along = hour)
 
 ```
 
-Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM$2,5$ del SINCA \### Grafico Box Plot
+```{r}
+knitr::include_graphics("variacion.gif")
 
-Se efectuó una comparación preliminar entre los datos registrados por los sensores de bajo costo y los obtenidos por los monitores de referencia del Sistema de Información Nacional de Calidad del Aire (SINCA), con el fin de evaluar su grado de concordancia. 
 
-## Calibración de los sensores plantower 
+```
+
+Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM<sub>2.5</sub> del SINCA
+
+## Calibración de los sensores plantower
 
 Una de las principales desventajas del uso de sensores de bajo costo como complemento de la red actual de monitoreo es que tienden a sobrrestimar los valores de concentracion debido a fluctuaciones de las condiciones ambientales como la temperatura y la humedad. Como consecuencia su calibración es de vital importancia para afrontar dichas limitaciones.
 
@@ -330,4 +359,5 @@ figura_final
 
 
 ```
-La figura se evidencia que al aplicarle un modelo de regresión lineal a los sendores de bajo costo todos los valores de errores medios estuvieron por debajo de 20 µg/m³.
+
+La figura se evidencia que al aplicarle un modelo de regresión lineal a los sendores de bajo costo todos los valores de errores medios estuvieron por debajo de 20 µg/m³ demostrándose el buen ajuste del modelo obtenido y por ende, la aplicabilidad e la calibración.
