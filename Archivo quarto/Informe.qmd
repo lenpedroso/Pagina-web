@@ -44,7 +44,7 @@ Primeramente, se analizará la tendencia temporal de las concentraciones de cinc
 #| echo: true
 #| message: false
 #| warning: false
-#| fig-cap: "Variación horaria de PM₂.₅ por día de la semana y sensor"
+#| fig-cap: "Variación horaria de PM$_{2,5}$ por día de la semana y sensor"
 # Cargar librerias -----------------------------------------------------
 library(dplyr)   
 library(tidyr)    
@@ -97,7 +97,7 @@ hour_wday <- hour_wday %>%
 #| echo: true
 #| message: false
 #| warning: false
-#| fig-cap: "Variación horaria de  PM$2,5$por día de la semana y sensor"
+#| fig-cap: "Variación horaria de  por día de la semana y sensor"
 
 
 library(ggplot2)
