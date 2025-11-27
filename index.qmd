@@ -138,7 +138,7 @@ knitr::include_graphics("variacion.gif")
 
 ```
 
-Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM<sub>2.5</sub> del SINCA
+Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM<sub>2.5</sub> del SINCA.
 
 ## Calibración de los sensores plantower
 
@@ -181,7 +181,7 @@ scatterPlot(
 
 ## Análisis de errores
 
-Para determinar la efectividad de la calibracion de los sensores de bajo costo se realiza un analisis de errores. en primer lugar, se evalua la distribucion de los errore absolutos para cada observacion; seguido de un analisis de las metricas de los errores (MB y MGE). En este caso se verifico que despues de la calibracion los valores del error estuvieran por debajo de 20 µg/m³.
+Para determinar la efectividad de la calibracion de los sensores de bajo costo se realiza un análisis de errores. En primer lugar, se evalua la distribución de los errore absolutos para cada observación; seguido de un analisis de las metricas de los errores (MB y MGE). En este caso se verificó que despues de la calibración los valores del error estuvieran por debajo de 20 µg/m³.
 
 ```{r}
 
