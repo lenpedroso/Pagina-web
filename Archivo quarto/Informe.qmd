@@ -351,7 +351,8 @@ figura_final
 ```
 
 La figura se evidencia que al aplicarle un modelo de regresión lineal a los sendores de bajo costo todos los valores de errores medios estuvieron por debajo de 20 $\mu\text{g/m}^3$.
-
+Los resultados pueden consultarse en la siguiente página web:  
+<https://lenpedroso.github.io/Pagina-web/>
 ## 3. Conclusiones
 
 1.  Los sensores de bajo costo tienden a sobrestimar la concentracion de PM$_{2,5}$.
