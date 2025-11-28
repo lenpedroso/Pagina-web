@@ -99,19 +99,17 @@ hour_wday <- hour_wday %>%
 #| warning: false
 #| fig-cap: "Variación horaria de  por día de la semana y sensor"
 
-
+# Cargar librerias
 library(ggplot2)
 
+# Obtener grafico
 ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group = sensor)) +
   geom_ribbon(aes(ymin = ymin, ymax = ymax), alpha = 0.15, colour = NA) +
   geom_line(linewidth = 1.4) +
   facet_wrap(vars(wday), nrow = 1) +
   labs(
     x = "Hora del día",
-    y = expression(PM[2.5]~(mu*g/m^3)),
-    color = "Sensor",
-    fill  = "Sensor",
-    title = "Promedio horario de PM2.5 por día de la semana y sensor"
+    y = expression(PM[2.5]~(mu*g/m^3))
   ) +
   scale_color_manual(
     values = c(
@@ -133,14 +131,12 @@ ggplot(hour_wday, aes(x = hour, y = mean, color = sensor, fill = sensor, group =
       "SINCA" = "#EE7AE9"
     )
   ) +
-  theme_bw() +
+  theme_bw(base_size = 14) +
   theme(
-    legend.position = "right",
-    plot.title = element_text(hjust = 0.5, face = "bold"),  
-    strip.background = element_rect(fill = "grey90", color = NA),
-    strip.text = element_text(face = "bold"),
-    axis.text.x = element_text(angle = 0, hjust = 0.5)
+    legend.title = element_blank()
   )
+
+ 
 ```
 
 Al analizar el gráfico se observa que existe una marcada diferencia en el comportamiento de los sensores de bajo costo en comparación con los valores de la estación de referencia (SINCA). En este caso los sensores de bajo costo tienden a sobreestimar las concentraciones de material particulado demostrándose la importancia de su calibración para solucionar estas limitaciones.
@@ -233,7 +229,6 @@ violin_nocalibrado <- ggplot(errores_no_calibrado ,
 errores_cal <- errores_completo %>% filter(Clasificacion == "Calibrados")
 
 # Grafico de violín para errores no calibrados ----------------------------
-
 violin_calibrado <- ggplot(errores_cal,
                                aes(x = sensor, y = error_abs, fill = sensor)) +
   geom_violin(trim = FALSE, alpha = 0.35, linewidth = 1.1) +  
@@ -250,9 +245,10 @@ violin_calibrado <- ggplot(errores_cal,
     "PM25_P5" = "#5A0F0F"
   )) +
   theme_bw(base_size = 16) +                 # Tema blanco y negro con tamño de texto 16
+  theme_bw(base_size = 16) +                 
   theme(
-    plot.title = element_text(face = "bold", hjust = 0.5), #Título en negrita y centrado
-    axis.text.x = element_text(angle = 45, hjust = 1) # Inclina el eje para evitar solapamientos
+    plot.title = element_text(face = "bold", hjust = 0.5), 
+    axis.text.x = element_text(angle = 45, hjust = 1) 
   ) +
   labs(title = "Error absoluto — Calibrados",
        x = "sensor", y = "Error absoluto (µg/m³)",
@@ -264,12 +260,11 @@ violin_calibrado <- ggplot(errores_cal,
 
 ```{r}
 
-#Cargar datos  -----------------------------------------------------
+# Cargar datos  -----------------------------------------------------
 Errores_antes_despues<- read.csv2( "C:/Semestre 2-2025/Visualizacion/Página web/Pagina web/Datos/Errores_antes_despues.csv",
   header = TRUE
 )
- #Grafico de error antes y --------------------------------------------------
-
+ #Grafico de error antes calibración-----------------------------------
 barras_MGE <- ggplot(Errores_antes_despues, 
                 aes(x = Sensor, y = MGE, fill = Clasificación)) +
   geom_bar(stat = "identity", color = "black", 
@@ -288,14 +283,13 @@ barras_MGE <- ggplot(Errores_antes_despues,
   theme_bw(base_size = 16) +
   theme(
     plot.title = element_text(face = "bold", hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1),
+     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.title = element_blank()
   ) +
   labs(title = "MGE antes / después de calibrar",
        x = "Sensor", y = "MGE (µg/m³)")
+
 # Gráfico de barras  MB  ------------------------------------------------
-
-
 barras_MB <- ggplot(Errores_antes_despues, 
                aes(x = Sensor, y = MB, fill = Clasificación)) +
   geom_bar(stat = "identity", color = "black",
@@ -314,7 +308,7 @@ barras_MB <- ggplot(Errores_antes_despues,
   theme_bw(base_size = 16) +    
   theme(
     plot.title = element_text(face = "bold", hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1),
+     axis.text.x = element_text(angle = 45, hjust = 1),
     legend.title = element_blank()
   ) +
   labs(title = "MB antes / después de calibrar",
@@ -330,24 +324,22 @@ barras_MB <- ggplot(Errores_antes_despues,
 #| message: false
 #| warning: false
 #| fig-cap: "Análisis de errores antes y después de la calibración"
-#| fig-width: 10
-#| fig-height: 6
 # Cargar librerias --------------------------------------------------------
 library(patchwork)
 
 # Especificar una leyenda para los violines ----------------------------------------
 
 figura_violines <- (violin_nocalibrado | violin_calibrado) +  
-  plot_layout(guides = "collect") & # Una leyenda       
+  plot_layout(guides = "collect") + # Una leyenda       
   theme(legend.position = "right")   # leyendas  a la derecha
 
-# Especificar una leyenda para los graficos de barras -------------------------------------------------------
+# Especificar una leyenda para los graficos de barras ------------------------
 figura_barras <- (barras_MGE | barras_MB) +
-  plot_layout(guides = "collect") &       
+  plot_layout(guides = "collect") +      
   theme(legend.position = "right")      
 
 
-# Unir figuras y especificar orden --------------------------------------------------------
+# Unir figuras y especificar orden --------------------------------------
 
 figura_final <- figura_violines / figura_barras
 
