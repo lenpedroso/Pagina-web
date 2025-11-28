@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="sinca" class="level2">
 <h2 class="anchored" data-anchor-id="sinca">SINCA</h2>
-<p>El <strong>Sistema de Información Nacional de Calidad del Aire(SINCA)</strong> presenta con aproximadamente 12 estaciones de monitoreo en la ciudad, lo que limita la determinación espacial de los contaminantes y, por ende, la estimación de la exposición real de la población. <a href="https://sinca.mma.gob.cl/" class="uri">https://sinca.mma.gob.cl/</a>.</p>
+<p>El <strong>Sistema de Información Nacional de Calidad del Aire (SINCA)</strong> presenta aproximadamente 10 estaciones de monitoreo en la ciudad de Santiago de Chile , lo que limita la determinación espacial de los contaminantes y, por ende, la exposición real de la población. <a href="https://sinca.mma.gob.cl/" class="uri">https://sinca.mma.gob.cl/</a>.</p>
 </section>
 <section id="sensores-de-bajo-costo" class="level2">
 <h2 class="anchored" data-anchor-id="sensores-de-bajo-costo">Sensores de bajo costo</h2>
@@ -229,14 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"grey90"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_reveal</span>(<span class="at">along =</span> hour)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
@@ -252,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM<sub>2.5</sub> del SINCA</p>
+<p>Se muestra que existe un defase entre los valores de concentración de los sensores de bajo costo (P1, P2, P3, P4, P5) en compración con las concentraciones de PM<sub>2.5</sub> del SINCA.</p>
 </section>
 </section>
 <section id="calibración-de-los-sensores-plantower" class="level2">
@@ -300,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="análisis-de-errores" class="level2">
 <h2 class="anchored" data-anchor-id="análisis-de-errores">Análisis de errores</h2>
-<p>Para determinar la efectividad de la calibracion de los sensores de bajo costo se realiza un analisis de errores. en primer lugar, se evalua la distribucion de los errore absolutos para cada observacion; seguido de un analisis de las metricas de los errores (MB y MGE). En este caso se verifico que despues de la calibracion los valores del error estuvieran por debajo de 20 µg/m³.</p>
+<p>Para determinar la efectividad de la calibracion de los sensores de bajo costo se realiza un análisis de errores. En primer lugar, se evalua la distribución de los errore absolutos para cada observación; seguido de un analisis de las metricas de los errores (MB y MGE). En este caso se verificó que despues de la calibración los valores del error estuvieran por debajo de 20 µg/m³.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Mostrar código</summary>
@@ -319,59 +312,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de violín para errores no calibrados ----------------------------</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>violin_nocalibrado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(errores_no_calibrado ,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">aes</span>(<span class="at">x =</span> sensor, <span class="at">y =</span> error_abs, <span class="at">fill =</span> sensor)) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span> <span class="co"># No recorta extremo y especifica la transparencia</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.10</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">linewidth =</span> <span class="fl">1.0</span>, <span class="co">#Añadir box plot dentro del violin</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.size =</span> <span class="fl">1.5</span>) <span class="sc">+</span>   <span class="co"># Especifica el tamaño de los puntos outlier</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,  <span class="co"># Añade una linea horizontal en y=20</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Selecciona el color de la linea</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span>       <span class="co"># Establece que el valor minimo es 0 y sin max(Na)</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(                 <span class="co"># Seleccion de colores para cada grafico de violin</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P1"</span> <span class="ot">=</span> <span class="st">"firebrick1"</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P2"</span> <span class="ot">=</span> <span class="st">"firebrick2"</span>,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P3"</span> <span class="ot">=</span> <span class="st">"firebrick3"</span>,</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P4"</span> <span class="ot">=</span> <span class="st">"firebrick4"</span>,</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P5"</span> <span class="ot">=</span> <span class="st">"#5A0F0F"</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>                 <span class="co"># Tema blanco y negro con tamño de texto 16</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="co">#Título en negrita y centrado</span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>) <span class="co"># Inclina el eje para evitar solapamientos</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Error absoluto — No calibrados"</span>,</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"sensor"</span>, <span class="at">y =</span> <span class="st">"Error absoluto (µg/m³)"</span>,</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"sensor"</span>)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de violín para errores calibrados ----------------------------</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar datos -------------------------------------------------------</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>errores_cal <span class="ot">&lt;-</span> errores_completo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Clasificacion <span class="sc">==</span> <span class="st">"Calibrados"</span>)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de violín para errores no calibrados ----------------------------</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>violin_calibrado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(errores_cal,</span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">aes</span>(<span class="at">x =</span> sensor, <span class="at">y =</span> error_abs, <span class="at">fill =</span> sensor)) <span class="sc">+</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span> <span class="co"># No recorta extremo y especifica la transparencia</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.10</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">linewidth =</span> <span class="fl">1.0</span>, <span class="co">#Añadir box plot dentro del violin</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.size =</span> <span class="fl">1.5</span>) <span class="sc">+</span>   <span class="co"># Especifica el tamaño de los puntos outlier</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,  <span class="co"># Añade una linea horizontal en y=20</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Selecciona el color de la linea</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span>       <span class="co"># Establece que el valor minimo es 0 y sin max(Na)</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(                 <span class="co"># Seleccion de colores para cada grafico de violin</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P1"</span> <span class="ot">=</span> <span class="st">"firebrick1"</span>,</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P2"</span> <span class="ot">=</span> <span class="st">"firebrick2"</span>,</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P3"</span> <span class="ot">=</span> <span class="st">"firebrick3"</span>,</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P4"</span> <span class="ot">=</span> <span class="st">"firebrick4"</span>,</span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P5"</span> <span class="ot">=</span> <span class="st">"#5A0F0F"</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>                 <span class="co"># Tema blanco y negro con tamño de texto 16</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="co">#Título en negrita y centrado</span></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>) <span class="co"># Inclina el eje para evitar solapamientos</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Error absoluto — Calibrados"</span>,</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"sensor"</span>, <span class="at">y =</span> <span class="st">"Error absoluto (µg/m³)"</span>,</span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"sensor"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>violin_nocalibrado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(errores_no_calibrado , <span class="fu">aes</span>(<span class="at">x =</span> sensor, <span class="at">y =</span> error_abs, <span class="at">fill =</span> sensor)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.35</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span> <span class="co"># No recorta extremo y especifica la transparencia</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(     <span class="co">#Añadir box plot dentro del violin</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.10</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">1.0</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="fl">1.5</span><span class="co"># Especifica el tamaño de los puntos outlier</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span>   </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">yintercept =</span> <span class="dv">20</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Añade una linea horizontal en y=20</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"firebrick4"</span>,<span class="co"># Selecciona el color de la linea</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span>       <span class="co"># Establece que el valor minimo es 0 y sin max(Na)</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Seleccion de colores para cada grafico de violin</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"PM25_P1"</span> <span class="ot">=</span> <span class="st">"firebrick1"</span>,</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">"PM25_P2"</span> <span class="ot">=</span> <span class="st">"firebrick2"</span>,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">"PM25_P3"</span> <span class="ot">=</span> <span class="st">"firebrick3"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      <span class="st">"PM25_P4"</span> <span class="ot">=</span> <span class="st">"firebrick4"</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>      <span class="st">"PM25_P5"</span> <span class="ot">=</span> <span class="st">"#5A0F0F"</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>        <span class="co"># Tema blanco y negro con tamño de texto 16</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="co">#Título en negrita</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Error absoluto — No calibrados"</span>,</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"sensor"</span>, <span class="at">y =</span> <span class="st">"Error absoluto (µg/m³)"</span>,</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"sensor"</span>)</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de violín para errores calibrados ----------------------------</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar datos -------------------------------------------------------</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>errores_cal <span class="ot">&lt;-</span> errores_completo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Clasificacion <span class="sc">==</span> <span class="st">"Calibrados"</span>)</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de violín para errores no calibrados ----------------------------</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>violin_calibrado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(errores_cal,</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">aes</span>(<span class="at">x =</span> sensor, <span class="at">y =</span> error_abs, <span class="at">fill =</span> sensor)) <span class="sc">+</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span> <span class="co"># No recorta extremo y especifica la transparencia</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.10</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">linewidth =</span> <span class="fl">1.0</span>, <span class="co">#Añadir box plot dentro del violin</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.size =</span> <span class="fl">1.5</span>) <span class="sc">+</span>   <span class="co"># Especifica el tamaño de los puntos outlier</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,  <span class="co"># Añade una linea horizontal en y=20</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Selecciona el color de la linea</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span>       <span class="co"># Establece que el valor minimo es 0 y sin max(Na)</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(                 <span class="co"># Seleccion de colores para cada grafico de violin</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P1"</span> <span class="ot">=</span> <span class="st">"firebrick1"</span>,</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P2"</span> <span class="ot">=</span> <span class="st">"firebrick2"</span>,</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P3"</span> <span class="ot">=</span> <span class="st">"firebrick3"</span>,</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P4"</span> <span class="ot">=</span> <span class="st">"firebrick4"</span>,</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PM25_P5"</span> <span class="ot">=</span> <span class="st">"#5A0F0F"</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>  <span class="co"># Tema blanco y negro con tamaño de texto 16</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="co"># Título en negrita y </span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Error absoluto — Calibrados"</span>,</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"sensor"</span>,</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Error absoluto (µg/m³)"</span>,</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"sensor"</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
@@ -400,38 +407,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),<span class="co"># Título en negrita y centrado.</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"MGE antes / después de calibrar"</span>,</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sensor"</span>, <span class="at">y =</span> <span class="st">"MGE (µg/m³)"</span>)</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de barras  MB  ------------------------------------------------</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),<span class="co"># Título en negrita</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"MGE antes / después de calibrar"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sensor"</span>, <span class="at">y =</span> <span class="st">"MGE (µg/m³)"</span>)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de barras  MB  ------------------------------------------------</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>barras_MB <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Errores_antes_despues, </span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> Sensor, <span class="at">y =</span> MB, <span class="at">fill =</span> Clasificación)) <span class="sc">+</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="co"># añade un borde negro a cada grafica</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> MB <span class="sc">-</span> SD_MB, <span class="at">ymax =</span> MB <span class="sc">+</span> SD_MB),<span class="co"># añade los valores de desviación del error</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>,</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>,  <span class="co"># Linea en 20 discontinua </span></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>,      </span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No calibrados"</span> <span class="ot">=</span> <span class="st">"#1E90FF"</span>,</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Calibrados"</span>    <span class="ot">=</span> <span class="st">"firebrick1"</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>    <span class="co"># Tema blanco y negro con tamño de texto 16</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),<span class="co"># Título en negrita y centrado.</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"MB antes / después de calibrar"</span>,</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sensor"</span>, <span class="at">y =</span> <span class="st">"MB (µg/m³)"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>barras_MB <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Errores_antes_despues, </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> Sensor, <span class="at">y =</span> MB, <span class="at">fill =</span> Clasificación)) <span class="sc">+</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="co"># añade un borde negro a cada grafica</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> MB <span class="sc">-</span> SD_MB, <span class="at">ymax =</span> MB <span class="sc">+</span> SD_MB),<span class="co"># añade los valores de desviación del error</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>,</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>,  <span class="co"># Linea en 20 discontinua </span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>,      </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No calibrados"</span> <span class="ot">=</span> <span class="st">"#1E90FF"</span>,</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Calibrados"</span>    <span class="ot">=</span> <span class="st">"firebrick1"</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">+</span>    <span class="co"># Tema blanco y negro con tamño de texto 16</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),<span class="co"># Título en negrita </span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"MB antes / después de calibrar"</span>,</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sensor"</span>, <span class="at">y =</span> <span class="st">"MB (µg/m³)"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
