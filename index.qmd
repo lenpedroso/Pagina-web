@@ -334,13 +334,13 @@ barras_MB <- ggplot(Errores_antes_despues,
 # Cargar librerias --------------------------------------------------------
 library(patchwork)
 
-# Especificar una leyenda para los violines ----------------------------------------
+# Especificar una leyenda para los violines ------------------------------------
 
-figura_violines <- (violin_nocalibrado | violin_calibrado) +  # Especifica el orden en la cuadricula 
+figura_violines <- (violin_nocalibrado | violin_calibrado) +  #  Orden 
   plot_layout(guides = "collect") + # Una leyenda       
   theme(legend.position = "right")   # leyendas  a la derecha
 
-# Especificar una leyenda para los graficos de barras -------------------------------------------------------
+# Especificar una leyenda para los graficos de barras -----------------------
 figura_barras <- (barras_MGE | barras_MB) +
   plot_layout(guides = "collect") +        # Una sola leyenda para las barras
   theme(legend.position = "right")      # leyendas  a la derecha
